@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  background-color: #ccc;
+}
+.modalContainer {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modalContainer .modal {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  border-radius: 10px;
+  color: orange;
+  position: relative;
+}
+.modal button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: orange;
+  cursor: pointer;
+}
+h1 {
+  text-align: center;
+  color: yellow;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  margin-top: 20px;
+}
+
+h1::after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background-color: yellow;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: headingAnimate 1.5s ease forwards;
+}
+@keyframes headingAnimate {
+  100% {
+    width: 90%;
+  }
+}
+.actionButtons {
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actionButtons button {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.actionButtons button:nth-child(1) {
+  background-color: green;
+  color: white;
+}
+.actionButtons button:nth-child(2) {
+  background-color: orange;
+  color: white;
+}
+.actionButtons button:nth-child(3) {
+  background-color: red;
+  color: white;
+}
+.actionButtons button:hover {
+  box-shadow: 0 0 5px black;
+  transition: 0.5s;
+}
+.question {
+  height: 200px;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: white;
+}
+.question .timer {
+  position: relative;
+  margin: auto;
+  width: fit-content;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -25px;
+}
+.question p {
+  text-align: center;
+}
+.question .options {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
+}
+.question .row1,
+.row2 {
+  display: flex;
+  justify-content: space-between;
+}
+.question .row1 button,
+.row2 button {
+  height: 30px;
+  width: 120px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
